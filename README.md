@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/epmnzava/income-expense.svg?style=flat-square)](https://packagist.org/packages/epmnzava/income-expense)
 [![Build Status](https://img.shields.io/travis/epmnzava/income-expense/master.svg?style=flat-square)](https://travis-ci.org/epmnzava/income-expense)
-[![Quality Score](https://img.shields.io/scrutinizer/g/epmnzava/income-expense.svg?style=flat-square)](https://scrutinizer-ci.com/g/epmnzava/income-expense)
+[![Quality Score](https://img.shields.io/scrutinizer/g/dbrax/income-expense.svg?style=flat-square)](https://scrutinizer-ci.com/g/dbrax/income-expense)
 [![Total Downloads](https://img.shields.io/packagist/dt/epmnzava/income-expense.svg?style=flat-square)](https://packagist.org/packages/epmnzava/income-expense)
 
 This package is basically a component or a module to give you an overall skeleton so as you can build your next accounting software.It draws all necessary tables , relationship and queiries to get you easily started with an accounting basics it also helps you  add accouting functionalities to your currenct laravel software.
