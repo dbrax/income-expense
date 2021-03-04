@@ -16,4 +16,4 @@ class Income extends Model
 {
 
     protected $guarded = [];
-}
+    protected $table="income";}

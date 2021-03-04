@@ -16,4 +16,5 @@ class ExpenseCategory extends Model
 {
 
     protected $guarded = [];
+    protected $table = "expense_category";
 }
