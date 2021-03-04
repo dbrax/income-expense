@@ -1,5 +1,14 @@
 <?php
 
+
+/**
+ * Author: Emmanuel Paul Mnzava
+ * Twitter: @epmnzava
+ * Github:https://github.com/dbrax/income-expense
+ * Email: epmnzava@gmail.com
+ * 
+ */
+
 namespace Epmnzava\IncomeExpense;
 
 use Epmnzava\IncomeExpense\Models\Expense;
@@ -7,10 +16,10 @@ use Epmnzava\IncomeExpense\Models\ExpenseCategory;
 use Epmnzava\IncomeExpense\Models\Income;
 use Epmnzava\IncomeExpense\Models\IncomeCategory;
 
-class IncomeExpense
+class IncomeExpense extends AccountingData
 {
 
-    public function newIncome(int $categoryid, string $income_title, int $amount,string $notes = ""): Income
+    public function newIncome(int $categoryid, string $income_title, int $amount, string $notes = ""): Income
     {
         return Income::create([
             "incomecategory" => $categoryid,
@@ -21,7 +30,7 @@ class IncomeExpense
         ]);
     }
 
-    public function newExpense(int $categoryid, string $expense_title,int  $amount, string $notes = ""): Expense
+    public function newExpense(int $categoryid, string $expense_title, int  $amount, string $notes = ""): Expense
     {
         return Expense::create([
             "expense_category" => $categoryid,
@@ -53,22 +62,22 @@ class IncomeExpense
         ]);
     }
 
-    public function deleteExpenseCategory()
+    public function deleteExpenseCategory($expensecategoryid)
     {
     }
 
 
-    public function deleteIncomeCategory()
+    public function deleteIncomeCategory($incomecategoryid)
     {
     }
 
 
-    public function updateExpenseCategory()
+    public function updateExpenseCategory($expensecategoryid)
     {
     }
 
 
-    public function updateIncomeCategory()
+    public function updateIncomeCategory($incomecategoryid)
     {
     }
 }
