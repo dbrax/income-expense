@@ -39,20 +39,22 @@ class IncomeTest extends TestCase
         parent::setUp();
 
         require_once __DIR__ . '/../database/migrations/create_income_category_table.php';
-        require_once __DIR__ . '/../database/migrations/create_expense_category_table.php';
+        require_once __DIR__ . '/../database/migrations/create_income_table.php';
 
         (new CreateIncomeCategoryTable())->up();
-        (new CreateExpenseCategoryTable())->up();
+        (new CreateIncomeTable())->up();
     }
 
-    public function test_new_income()
+
+    /**
+     * A test to a add income 
+     */
+    public function can_add_new_income()
     {
         $this->assertTrue(true);
     }
 
-   
-
-     /**
+    /**
      * A test to a add income category
      */
     public function test_new_income_category()

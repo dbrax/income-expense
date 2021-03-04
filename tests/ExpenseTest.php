@@ -11,6 +11,7 @@
 namespace Epmnzava\IncomeExpense\Tests;
 
 use CreateExpenseCategoryTable;
+use CreateExpenseTable;
 use CreateIncomeCategoryTable;
 use Epmnzava\IncomeExpense\IncomeExpense;
 use Orchestra\Testbench\TestCase;
@@ -36,10 +37,19 @@ class ExpenseTest extends TestCase
         parent::setUp();
 
         require_once __DIR__ . '/../database/migrations/create_expense_category_table.php';
+        require_once __DIR__ . '/../database/migrations/create_expense_table.php';
 
         (new CreateExpenseCategoryTable())->up();
+        (new CreateExpenseTable())->up();
     }
 
+    /**
+     * A test to a add new expense 
+     */
+    public function can_add_expense()
+    {
+        $this->assertTrue(true);
+    }
 
     /**
      * A test to a add expense category
@@ -55,6 +65,4 @@ class ExpenseTest extends TestCase
             "description" => "test_description"
         ]);
     }
-
-
 }
