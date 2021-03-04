@@ -4,5 +4,41 @@ namespace Epmnzava\IncomeExpense;
 
 class IncomeExpense
 {
-    // Build your next great package.
+
+    public function newIncome()
+    {
+    }
+
+    public function newExpense()
+    {
+    }
+
+
+    public function addExpenseCategory()
+    {
+    }
+
+
+    public function addIncomeCategory()
+    {
+    }
+
+    public function deleteExpenseCategory()
+    {
+    }
+
+
+    public function deleteIncomeCategory()
+    {
+    }
+
+
+    public function updateExpenseCategory()
+    {
+    }
+
+
+    public function updateIncomeCategory()
+    {
+    }
 }

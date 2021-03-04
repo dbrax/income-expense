@@ -12,7 +12,7 @@ namespace  Epmnzava\IncomeExpense\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Income extends Model
+class Expense extends Model
 {
 
     protected $guarded = [];
