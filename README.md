@@ -34,6 +34,8 @@ php artisan vendor:publish --provider="Epmnzava\IncomeExpense\IncomeExpenseServi
 ### Environmental Variables
 
 INCOME_CURRENCY `Provide your desired currency `
+
+
 INCOME_SEND_MAIL `Provice 1 if you want to be sending email notifications and 0 if you dont`
 
 
