@@ -6,7 +6,9 @@
 return [
 
 
-  'currency'=>env('INCOME_CURRENCY')
+  'currency'=>env('INCOME_CURRENCY'),
+
+  'send_main'=>env('INCOME_SEND_MAIL')
 
 
     
