@@ -1,6 +1,6 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/epmnzava/income-expense.svg?style=flat-square)](https://packagist.org/packages/epmnzava/income-expense)
-[![Build Status](https://img.shields.io/travis/epmnzava/income-expense/master.svg?style=flat-square)](https://travis-ci.org/epmnzava/income-expense)
+
 [![Quality Score](https://img.shields.io/scrutinizer/g/dbrax/income-expense.svg?style=flat-square)](https://scrutinizer-ci.com/g/dbrax/income-expense)
 [![Total Downloads](https://img.shields.io/packagist/dt/epmnzava/income-expense.svg?style=flat-square)](https://packagist.org/packages/epmnzava/income-expense)
 
