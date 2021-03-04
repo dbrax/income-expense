@@ -52,7 +52,9 @@ class IncomeTest extends TestCase
 
    
 
-
+     /**
+     * A test to a add income category
+     */
     public function test_new_income_category()
     {
         $category = new IncomeExpense;

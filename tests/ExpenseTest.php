@@ -41,6 +41,9 @@ class ExpenseTest extends TestCase
     }
 
 
+    /**
+     * A test to a add expense category
+     */
     public function test_new_expense_category()
     {
         $category = new IncomeExpense;
