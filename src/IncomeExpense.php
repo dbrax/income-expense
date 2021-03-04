@@ -4,16 +4,24 @@ namespace Epmnzava\IncomeExpense;
 
 use Epmnzava\IncomeExpense\Models\Expense;
 use Epmnzava\IncomeExpense\Models\ExpenseCategory;
+use Epmnzava\IncomeExpense\Models\Income;
 use Epmnzava\IncomeExpense\Models\IncomeCategory;
 
 class IncomeExpense
 {
 
-    public function newIncome()
+    public function newIncome(int $categoryid, string $income_title, int $amount,string $notes = ""): Income
     {
+        return Income::create([
+            "incomecategory" => $categoryid,
+            "income_title" => $income_title,
+            "amount" => $amount,
+            "notes" => $notes,
+            "date" => date('Y-m-d')
+        ]);
     }
 
-    public function newExpense($categoryid, $expense_title, $amount, $notes = ""): Expense
+    public function newExpense(int $categoryid, string $expense_title,int  $amount, string $notes = ""): Expense
     {
         return Expense::create([
             "expense_category" => $categoryid,

@@ -48,7 +48,15 @@ class ExpenseTest extends TestCase
      */
     public function can_add_expense()
     {
-        $this->assertTrue(true);
+        $expense=new IncomeExpense;
+        $newexpense=$expense->newExpense(1,"dashboard printer",4000,"very costful printer");
+
+        $this->assertDatabaseHas("income",  [
+            "expense_category" => 1,
+            "expense_title" => "dashboard printer",
+            "amount"=>4000,
+            "notes"=>"very costful printer"
+        ]);
     }
 
     /**

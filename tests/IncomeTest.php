@@ -51,7 +51,15 @@ class IncomeTest extends TestCase
      */
     public function can_add_new_income()
     {
-        $this->assertTrue(true);
+        $income = new IncomeExpense;
+        $newincome = $income->newIncome(1, "dashboard printer", 4000, "it is an amazing printer");
+
+        $this->assertDatabaseHas("income",  [
+            "incomecategory" => 1,
+            "income_title" => "dashboard printer",
+            "amount" => 4000,
+            "notes" => "it is an amazing printer"
+        ]);
     }
 
     /**
