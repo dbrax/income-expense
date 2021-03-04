@@ -9,6 +9,7 @@ This package is basically a component or a module to give you an overall skeleto
 
 - Laravel Version: ˆ7.2 ==> ^8.0
 - PHP Version: ^7.1|^7.2|^7.3|^7.4|^8.0
+
 You can install the package via composer:
 
 ```bash
