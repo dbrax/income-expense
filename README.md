@@ -1,4 +1,3 @@
-# Very short description of the package
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/epmnzava/income-expense.svg?style=flat-square)](https://packagist.org/packages/epmnzava/income-expense)
 [![Build Status](https://img.shields.io/travis/epmnzava/income-expense/master.svg?style=flat-square)](https://travis-ci.org/epmnzava/income-expense)
