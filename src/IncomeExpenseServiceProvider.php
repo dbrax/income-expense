@@ -31,7 +31,7 @@ class IncomeExpenseServiceProvider extends ServiceProvider
                     __DIR__ . '/../database/migrations/create_expense_category_table.php' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_expense_category_table.php'),
                     __DIR__ . '/../database/migrations/create_expense_table.php' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_expense_table.php'),
                     __DIR__ . '/../database/migrations/create_income_table.php' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_income_table.php'),
-                    __DIR__ . '/../database/migrations/create_ledger_table.php' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_ledger_table.php)
+                    __DIR__ . '/../database/migrations/create_ledger_table.php' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_ledger_table.php')
 
                 
                 ], 'migrations');
