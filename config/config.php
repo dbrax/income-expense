@@ -6,9 +6,15 @@
 return [
 
 
-  'currency'=>env('INCOME_CURRENCY'),
+  'currency'=>env('INEX_CURRENCY'),
 
-  'send_main'=>env('INCOME_SEND_MAIL')
+  'send_mail'=>env('INEX_SEND_MAIL'),
+
+  "mail_from"=>env('INEX_MAIL_FROM','epmnzava@gmail.com'),
+
+  "transaction_id_prefix"=>env("INEX_TRANSACTION_PREFIX","INEX"),
+
+  "transaction_id_length"=>env('INEX_TRANSACTION_ID_LENGTH')
 
 
     

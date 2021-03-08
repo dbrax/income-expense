@@ -25,6 +25,8 @@ class CreateIncomeCategoryTable extends Migration
         Schema::create('income_category', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('category');
+            $table->string('slug')->nullable();
+
             $table->text('description')->nullable();
             $table->date('date');
 
