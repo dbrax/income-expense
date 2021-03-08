@@ -6,7 +6,7 @@
  * Twitter: @epmnzava
  * Github:https://github.com/dbrax/income-expense
  * Email: epmnzava@gmail.com
- * 
+ *
  */
 
 namespace Epmnzava\IncomeExpense;
@@ -16,11 +16,22 @@ use Epmnzava\IncomeExpense\Models\ExpenseCategory;
 use Epmnzava\IncomeExpense\Models\Income;
 use Epmnzava\IncomeExpense\Models\IncomeCategory;
 use Epmnzava\IncomeExpense\Models\Ledger;
+use Illuminate\Support\Str;
 
 class IncomeExpense extends AccountingData
 {
 
 
+    /**
+     * @param int $categoryid
+     * @param string $income_title
+     * @param int $amount
+     * @param string $notes
+     * @param string $transaction_id
+     * @return Income
+     *
+     * function to add an income and ledger at the same time
+     */
     public function add_income(int $categoryid, string $income_title, int $amount, string $notes = "", $transaction_id = "0"): Income
     {
 
@@ -35,6 +46,16 @@ class IncomeExpense extends AccountingData
         return $income;
     }
 
+    /**
+     * @param int $categoryid
+     * @param string $income_title
+     * @param int $amount
+     * @param string $notes
+     * @param string $transaction_id
+     * @return Expense
+     *
+     * function to add expense and to a ledger at the sametime
+     */
 
     public function add_expense(int $categoryid, string $income_title, int $amount, string $notes = "", $transaction_id = "0"): Expense
     {
@@ -49,6 +70,15 @@ class IncomeExpense extends AccountingData
 
         return $expense;
     }
+
+
+    /**
+     * @param $income
+     * @return string
+     * @throws \Exception
+     *
+     * function that sets a transaction id
+     */
 
     public function set_transaction_id($income)
     {
@@ -67,6 +97,16 @@ class IncomeExpense extends AccountingData
 
         return $prefix . $str;
     }
+
+    /**
+     * @param int $categoryid
+     * @param string $income_title
+     * @param int $amount
+     * @param string $notes
+     * @return Income
+     *
+     * Unit function that adds income
+     */
     public function newIncome(int $categoryid, string $income_title, int $amount, string $notes = ""): Income
     {
         return Income::create([
@@ -78,6 +118,14 @@ class IncomeExpense extends AccountingData
         ]);
     }
 
+    /**
+     * @param $transactionObj
+     * @param $type
+     * @param $transaction_id
+     * @return Ledger
+     *
+     * unit function that adds a ledger transaction
+     */
     public function add_transaction_on_ledger($transactionObj, $type, $transaction_id): Ledger
     {
 
@@ -89,6 +137,16 @@ class IncomeExpense extends AccountingData
         $ledger->save();
         return $ledger;
     }
+
+    /**
+     * @param int $categoryid
+     * @param string $expense_title
+     * @param int $amount
+     * @param string $notes
+     * @return Expense
+     *
+     * A unit function that adds new expense
+     */
 
     public function newExpense(int $categoryid, string $expense_title, int  $amount, string $notes = ""): Expense
     {
@@ -102,14 +160,30 @@ class IncomeExpense extends AccountingData
     }
 
 
+    /**
+     * @param $categoryname
+     * @param $description
+     * @return ExpenseCategory
+     *
+     * A unit function that adds expense category
+     */
     public function addExpenseCategory($categoryname, $description): ExpenseCategory
     {
         return  ExpenseCategory::create([
             "category" => $categoryname,
             "description" => $description,
+            "slug"=>Str::slug($categoryname),
             "date" => date('Y-m-d')
         ]);
     }
+
+    /**
+     * @param $categoryname
+     * @param $description
+     * @return IncomeCategory
+     *
+     * A unit function that adds income category
+     */
 
 
     public function addIncomeCategory($categoryname, $description): IncomeCategory
@@ -118,6 +192,7 @@ class IncomeExpense extends AccountingData
         return  IncomeCategory::create([
             "category" => $categoryname,
             "description" => $description,
+            "slug"=>Str::slug('($categoryname', '-'),
             "date" => date('Y-m-d')
         ]);
     }
