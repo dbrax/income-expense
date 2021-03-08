@@ -26,11 +26,35 @@ class AccountingData
     {
         return Income::sum('amount');
     }
-    public function totalIncomeByCategory(int $category)
+
+
+    /**
+     * @param int $category
+     * @return int
+     * function gets sum of an income by a given category ..
+     */
+    public function sumOfIncomeByCategory(int $category) : int
     {
         return Income::where('incomecategory',$category)->sum('amount');
     }
-    public function totalIncomeThisMonth()
+
+
+    /**
+     * @param int $category
+     * @return int
+     * function gets sum of an expense by a given category ..
+     */
+    public function sumOfExpenseByCategory(int $category) : int
+    {
+        return Expense::where('expense_category',$category)->sum('amount');
+    }
+
+    /**
+     * @return int
+     *
+     * function gets the total income for  the current month
+     */
+    public function totalIncomeThisMonth() : int
     {
         return Income::whereMonth('date', date('m'))->whereYear('date', date('Y'))->sum('amount');
     }
