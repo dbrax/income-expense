@@ -15,9 +15,16 @@ use Epmnzava\IncomeExpense\Models\Expense;
 use Epmnzava\IncomeExpense\Models\ExpenseCategory;
 use Epmnzava\IncomeExpense\Models\Income;
 use Epmnzava\IncomeExpense\Models\IncomeCategory;
+use Carbon\Carbon;
 
 class AccountingData
 {
+
+
+
+    public function _construct(){
+
+    }
 
      /**
       * Get sum of total income
@@ -54,7 +61,7 @@ class AccountingData
      *
      * function gets the total income for  the current month
      */
-    public function totalIncomeThisMonth() : int
+    public function total_sum_of_income_this_month() : int
     {
         return Income::whereMonth('date', date('m'))->whereYear('date', date('Y'))->sum('amount');
     }
@@ -68,16 +75,59 @@ class AccountingData
         return Expense::sum('amount');
     }
 
-    public function totalExpenseThisMonth()
+    /**
+     * @return int
+     * function that gets total expense for the current month
+     */
+    public function totalExpenseThisMonth() : int
     {
         return Expense::whereMonth('date', date('m'))->whereYear('date', date('Y'))->sum('amount');
     }
 
-    public function totalIncomeThisYear()
+
+    /**
+     * @return int
+     * function that gets totalincome of the current year
+     */
+    public function totalIncomeThisYear() : int
     {
         return Income::whereYear('date', date('Y'))->sum('amount');
     }
-    public function totalExpenseThisYear()
+
+    /**
+     * @return int
+     *
+     *sum_of_total_income_last_year
+     */
+    public function sum_of_total_income_last_year() : int
+    {
+        $date = new Carbon();
+
+
+        return Income::whereYear('date',$date->subYear()->format('Y'))->sum('amount');
+    }
+
+    /**
+     * @return int
+     *
+     * sum_of_total_income_last_month
+     */
+
+    public function sum_of_total_income_last_month() : int
+    {
+        $date = new Carbon();
+
+
+        return Income::whereYear('date',$date->subMonth()->format('m'))->sum('amount');
+    }
+
+
+    /**
+     * @return int
+     *
+     * function that
+     */
+    public function sum_of_expense_this_year() : int
     {
         return Expense::whereYear('date', date('Y'))->sum('amount');
     }
