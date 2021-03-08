@@ -6,7 +6,7 @@
  * Twitter: @epmnzava
  * Github:https://github.com/dbrax/income-expense
  * Email: epmnzava@gmail.com
- * 
+ *
  */
 
 namespace Epmnzava\IncomeExpense;
@@ -19,7 +19,10 @@ use Epmnzava\IncomeExpense\Models\IncomeCategory;
 class AccountingData
 {
 
-    public function totalIncome()
+     /**
+      * Get sum of total income
+      */
+    public function totalIncome() : int
     {
         return Income::sum('amount');
     }

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * You can place your custom package configuration in here.
+ * config for income-expense package
  */
 return [
 
