@@ -22,7 +22,7 @@ class AccountingData
      /**
       * Get sum of total income
       */
-    public function totalIncome() : int
+    public function total_sum_Income() : int
     {
         return Income::sum('amount');
     }
@@ -59,7 +59,11 @@ class AccountingData
         return Income::whereMonth('date', date('m'))->whereYear('date', date('Y'))->sum('amount');
     }
 
-    public function totalExpense()
+    /**
+     * @return int
+     * function that gets the total_sum_of_all_expense
+     */
+    public function total_sum_Expense() :int
     {
         return Expense::sum('amount');
     }
