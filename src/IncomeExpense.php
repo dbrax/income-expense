@@ -201,15 +201,25 @@ class IncomeExpense extends AccountingData
         ]);
     }
 
-
-    public function getExpenseCategoryById($expensecategoryid)
+    /**
+     * @param $expensecategoryid
+     * @return Expense
+     *
+     * Function that return a specific expense category instance by passing in an expense category id
+     */
+    public function getExpenseCategoryById($expensecategoryid) : Expense
     {
         return ExpenseCategory::find($expensecategoryid);
     }
 
 
-
-    public function getIncomeCategoryById($incomecategoryid)
+    /**
+     * @param $incomecategoryid
+     * @return Income
+     *
+     * Function that returns a particular IncomeCatgory by passing in an incomecategoryid
+     */
+    public function getIncomeCategoryById($incomecategoryid) : Income
     {
         return IncomeCategory::find($incomecategoryid);
     }

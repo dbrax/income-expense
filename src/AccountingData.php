@@ -132,40 +132,67 @@ class AccountingData
         return Expense::whereYear('date', date('Y'))->sum('amount');
     }
 
-
-    public function getExpenseCategories() 
+    /**
+     * @return ExpenseCategory[]|\Illuminate\Database\Eloquent\Collection
+     *
+     * Function to return all Expense Categories
+     */
+    public function getExpenseCategories()
     {
 return ExpenseCategory::all();
     }
 
 
-
-    public function getIncomeCategories() 
+    /**
+     * @return IncomeCategory[]|\Illuminate\Database\Eloquent\Collection
+     * Function to return all IncomeCategories
+     */
+    public function getIncomeCategories()
     {
 return IncomeCategory::all();
     }
 
 
-
-    public function getIncomeById($incomeid){
+    /**
+     * @param $incomeid
+     * @return Income
+     *
+     * Function to return specific income instance per income if passed
+     */
+    public function getIncomeById($incomeid) : Income
+    {
 
         return Income::find($incomeid);
     }
 
 
-    public function getExpenseById($expenseid){
+    /**
+     * @param $expenseid
+     * @return Expense
+     * Function to return specific expense instance per expense id passed
+     */
+    public function getExpenseById($expenseid) : Expense
+    {
 
         return Expense::find($expenseid);
     }
 
+    /**
+     * @return Expense[]|\Illuminate\Database\Eloquent\Collection
+     * function to get all expenses
+     */
     public function getAllExpenses(){
 
         return Expense::all();
     }
 
 
-
-    public function getAllIncomes(){
+    /**
+     * @return Income[]|\Illuminate\Database\Eloquent\Collection
+     * function to get all incomes
+     */
+    public function getAllIncomes()
+    {
 
         return Income::all();
     }
