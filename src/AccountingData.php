@@ -147,4 +147,29 @@ return IncomeCategory::all();
 
 
 
+    public function getIncomeById($incomeid){
+
+        return Income::find($incomeid);
+    }
+
+
+    public function getExpenseById($expenseid){
+
+        return Expense::find($expenseid);
+    }
+
+    public function getAllExpenses(){
+
+        return Expense::all();
+    }
+
+
+
+    public function getAllIncomes(){
+
+        return Income::all();
+    }
+
+
+
 }
