@@ -107,7 +107,7 @@ class IncomeExpense extends AccountingData
      *
      * Unit function that adds income
      */
-    public function newIncome(int $categoryid, string $income_title, int $amount, string $notes = ""): Income
+    private function newIncome(int $categoryid, string $income_title, int $amount, string $notes = ""): Income
     {
         return Income::create([
             "incomecategory" => $categoryid,
@@ -148,7 +148,7 @@ class IncomeExpense extends AccountingData
      * A unit function that adds new expense
      */
 
-    public function newExpense(int $categoryid, string $expense_title, int  $amount, string $notes = ""): Expense
+    private function newExpense(int $categoryid, string $expense_title, int  $amount, string $notes = ""): Expense
     {
         return Expense::create([
             "expense_category" => $categoryid,

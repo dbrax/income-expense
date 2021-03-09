@@ -131,4 +131,20 @@ class AccountingData
     {
         return Expense::whereYear('date', date('Y'))->sum('amount');
     }
+
+
+    public function getExpenseCategories() 
+    {
+return ExpenseCategory::all();
+    }
+
+
+
+    public function getIncomeCategories() 
+    {
+return IncomeCategory::all();
+    }
+
+
+
 }
