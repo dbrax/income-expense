@@ -57,10 +57,10 @@ class IncomeExpense extends AccountingData
      * function to add expense and to a ledger at the sametime
      */
 
-    public function add_expense(int $categoryid, string $income_title, int $amount, string $notes = "", $transaction_id = "0"): Expense
+    public function add_expense(int $categoryid, string $expense_title, int $amount, string $notes = "", $transaction_id = "0"): Expense
     {
 
-        $expense = $this->newExpense($categoryid, $income_title, $amount, $notes, $transaction_id);
+        $expense = $this->newExpense($categoryid, $expense_title, $amount, $notes, $transaction_id);
 
         if ($transaction_id == 0)
             $transaction_id = $this->set_transaction_id($expense);
@@ -195,6 +195,19 @@ class IncomeExpense extends AccountingData
             "slug"=>Str::slug('($categoryname', '-'),
             "date" => date('Y-m-d')
         ]);
+    }
+
+
+    public function getExpenseCategoryById($expensecategoryid)
+    {
+        return ExpenseCategory::find($expensecategoryid);
+    }
+
+
+
+    public function getIncomeCategoryById($incomecategoryid)
+    {
+        return IncomeCategory::find($incomecategoryid);
     }
 
     public function deleteExpenseCategory($expensecategoryid)
