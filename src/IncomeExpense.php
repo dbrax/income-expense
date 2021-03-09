@@ -132,7 +132,11 @@ class IncomeExpense extends AccountingData
         $ledger = new Ledger;
         $ledger->transaction_id = $transaction_id;
         $ledger->transaction_type = $type;
+        if($type=="INC")
         $ledger->transaction_type_category = $transactionObj->incomecategory;
+        else
+        $ledger->transaction_type_category = $transactionObj->expense_category;
+
         $ledger->amount = $transactionObj->amount;
         $ledger->save();
         return $ledger;
