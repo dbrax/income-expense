@@ -207,7 +207,7 @@ class IncomeExpense extends AccountingData
      *
      * Function that return a specific expense category instance by passing in an expense category id
      */
-    public function getExpenseCategoryById($expensecategoryid) : Expense
+    public function getExpenseCategoryById($expensecategoryid) : ExpenseCategory
     {
         return ExpenseCategory::find($expensecategoryid);
     }
@@ -219,7 +219,7 @@ class IncomeExpense extends AccountingData
      *
      * Function that returns a particular IncomeCatgory by passing in an incomecategoryid
      */
-    public function getIncomeCategoryById($incomecategoryid) : Income
+    public function getIncomeCategoryById($incomecategoryid) : IncomeCategory
     {
         return IncomeCategory::find($incomecategoryid);
     }
