@@ -198,5 +198,18 @@ return IncomeCategory::all();
     }
 
 
+    public function getIncomeCategoryIdByName($categoryname){
+
+        return IncomeCategory::where('category',$categoryname)->first()->id;
+    }
+
+
+    public function getExpenseCategoryIdByName($categoryname){
+
+        return ExpenseCategory::where('category',$categoryname)->first()->id;
+    }
+
+
+
 
 }
