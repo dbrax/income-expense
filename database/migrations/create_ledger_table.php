@@ -28,7 +28,7 @@ class CreateLedgerTable extends Migration
             $table->string('transaction_type'); // exp or inc
             $table->string('transaction_type_category');
             $table->integer('amount');
-            $table->integer('walking_balance')->default(); // always gets deducted when expense is added optinal
+            $table->integer('balance')->default(); // always gets deducted when expense is added optinal
 
 
 
