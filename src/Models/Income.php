@@ -11,9 +11,19 @@
 namespace  Epmnzava\IncomeExpense\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Epmnzava\IncomeExpense\Models\IncomeCategory;
+
 
 class Income extends Model
 {
 
     protected $guarded = [];
-    protected $table="income";}
+    protected $table="income";
+
+       public function category()
+    {
+        return $this->belongsTo(IncomeCategory::class);
+    }
+
+
+}
