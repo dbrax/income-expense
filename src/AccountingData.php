@@ -220,6 +220,8 @@ return IncomeCategory::all();
   public function getExpensesOnDateRangeFromExpenseType($from_date,$to_date,$expense_type) 
   {
 
+    
+
     return Expense::whereBetween('date',[$from_date,$to_date])->where('expense_category',$expense_type)->get();
         
   }
