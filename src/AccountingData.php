@@ -209,6 +209,23 @@ return IncomeCategory::all();
         return ExpenseCategory::where('category',$categoryname)->first()->id;
     }
 
+    public function getIncomeOnDateRange($from_date,$to_date){
+        
+            return Income::whereBetween('date',[$from_date,$to_date])->get();
+
+
+    }
+
+
+    public function getIncomeOnDateRangeFromIncomeType($from_date,$to_date,$income_type) 
+  {
+
+    
+
+    return Income::whereBetween('date',[$from_date,$to_date])->where('incomecategory',$income_type)->get();
+        
+  }
+
 
     public function getExpensesOnDateRange($from_date,$to_date){
         
