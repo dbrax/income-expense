@@ -196,7 +196,7 @@ class IncomeExpense extends AccountingData
         return  IncomeCategory::create([
             "category" => $categoryname,
             "description" => $description,
-            "slug"=>Str::slug('($categoryname', '-'),
+            "slug"=>Str::slug($categoryname, '-'),
             "date" => date('Y-m-d')
         ]);
     }
