@@ -7,7 +7,7 @@
 This package is basically a component or a module to give you an overall skeleton so as you can build your next accounting software.It draws all necessary tables , relationship and queiries to get you easily started with an accounting basics it also helps you  add accouting functionalities to your currenct laravel software.
 ## Installation
 
-- Laravel Version: ˆ7.2 ==> ^8.0
+- Laravel Version: ˆ7.2 ==> ^9.0
 - PHP Version: ^7.1|^7.2|^7.3|^7.4|^8.0
 
 You can install the package via composer:
